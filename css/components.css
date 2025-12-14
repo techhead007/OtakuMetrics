@@ -1,0 +1,642 @@
+/* Components CSS - Card, button, chart container styles */
+
+/* ===== KPI Cards ===== */
+.kpi-card {
+  padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.kpi-card:hover::before {
+  opacity: 1;
+}
+
+/* Anime KPI Card Specific */
+.anime-card {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.05) 0%,
+    rgba(102, 126, 234, 0.05) 100%
+  );
+}
+
+.anime-card::before {
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+}
+
+.anime-card:hover {
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.kpi-rank {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--neon-cyan);
+  opacity: 0.7;
+}
+
+.kpi-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+.kpi-value {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.popularity-score {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trend-indicator {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.trend-indicator.positive {
+  color: var(--positive);
+  text-shadow: 0 0 10px var(--positive);
+}
+
+.trend-indicator.negative {
+  color: var(--negative);
+  text-shadow: 0 0 10px var(--negative);
+}
+
+.trend-indicator.neutral {
+  color: var(--neutral);
+}
+
+.kpi-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.kpi-meta .score {
+  color: var(--neon-yellow);
+}
+
+/* Stock KPI Card Specific */
+.stock-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 153, 0, 0.05) 0%,
+    rgba(255, 102, 0, 0.05) 100%
+  );
+}
+
+.stock-card::before {
+  background: var(--aws-gradient);
+}
+
+.stock-card:hover {
+  box-shadow: var(--shadow-glow-orange);
+}
+
+.kpi-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stock-card .kpi-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.stock-card .kpi-value.text-positive {
+  color: var(--positive);
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.stock-card .kpi-value.text-negative {
+  color: var(--negative);
+  text-shadow: 0 0 15px rgba(255, 71, 87, 0.3);
+}
+
+.kpi-sub {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-xs);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Filter Buttons */
+.filter-btn {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+}
+
+.filter-btn.active {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.2),
+    rgba(255, 0, 255, 0.2)
+  );
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+}
+
+/* ===== Chart Containers ===== */
+.chart-container {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 245, 255, 0.02) 0%,
+    transparent 100%
+  );
+}
+
+.chart-container canvas {
+  max-height: 400px;
+}
+
+.scatter-container {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(168, 85, 247, 0.02) 0%,
+    transparent 100%
+  );
+}
+
+.scatter-container canvas {
+  max-height: 300px;
+}
+
+/* ===== Correlation Stats ===== */
+.correlation-stats .stat-value {
+  font-size: 2.5rem;
+}
+
+.correlation-stats .stat-value.correlation-strong {
+  background: linear-gradient(135deg, var(--positive), var(--neon-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.correlation-stats .stat-value.correlation-moderate {
+  background: linear-gradient(135deg, var(--neon-yellow), var(--aws-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.correlation-stats .stat-value.correlation-weak {
+  background: linear-gradient(135deg, var(--aws-orange), var(--negative));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.correlation-stats .stat-value.correlation-none {
+  background: linear-gradient(135deg, var(--text-muted), var(--neutral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== Loader ===== */
+.anime-loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.loader-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.loader-ring:nth-child(1) {
+  border-top-color: var(--neon-cyan);
+  animation: spin 1.5s linear infinite;
+}
+
+.loader-ring:nth-child(2) {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-right-color: var(--neon-magenta);
+  animation: spin 2s linear infinite reverse;
+}
+
+.loader-ring:nth-child(3) {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  border-bottom-color: var(--aws-orange);
+  animation: spin 1s linear infinite;
+}
+
+.loader-core {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--neon-cyan), transparent);
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Loading Text Dots ===== */
+.loading-dots::after {
+  content: "";
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: "";
+  }
+  40% {
+    content: ".";
+  }
+  60% {
+    content: "..";
+  }
+  80%,
+  100% {
+    content: "...";
+  }
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
+
+/* ===== Selection Styling ===== */
+::selection {
+  background: rgba(0, 245, 255, 0.3);
+  color: var(--text-primary);
+}
+
+/* ===== Enhanced Anime Hover Effects ===== */
+
+/* Card Shine Effect */
+.kpi-card::after,
+.analytics-card::after,
+.stat-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg) translateY(-100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.kpi-card:hover::after,
+.analytics-card:hover::after,
+.stat-card:hover::after {
+  transform: rotate(45deg) translateY(100%);
+}
+
+/* Anime Button Glow */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Filter Button Power-Up Effect */
+.filter-btn {
+  position: relative;
+}
+
+.filter-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.filter-btn:hover::after,
+.filter-btn.active::after {
+  width: 80%;
+}
+
+/* Section Title Anime Underline */
+.section-title {
+  position: relative;
+  display: inline-flex;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), transparent);
+  transition: width 0.5s ease;
+}
+
+.section-title:hover::after {
+  width: 100%;
+}
+
+/* KPI Value Glow Animation */
+.popularity-score,
+.stat-value {
+  transition: text-shadow 0.3s ease;
+}
+
+.kpi-card:hover .popularity-score {
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan),
+    0 0 30px var(--neon-cyan);
+}
+
+.stat-card:hover .stat-number {
+  text-shadow: 0 0 10px var(--aws-orange), 0 0 20px var(--aws-orange);
+}
+
+/* Chart Container Hover Glow */
+.chart-container:hover,
+.scatter-container:hover {
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.2),
+    inset 0 0 30px rgba(0, 245, 255, 0.05);
+}
+
+/* Table Row Hover Effect */
+.data-table tbody tr {
+  position: relative;
+}
+
+.data-table tbody tr::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-magenta));
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.data-table tbody tr:hover::before {
+  transform: scaleY(1);
+}
+
+/* Insight Card Icon Animation */
+.insight-icon {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.insight-card:hover .insight-icon {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* Logo Hover Effect */
+.logo:hover .logo-anime {
+  animation: logoGlitch 0.3s ease;
+}
+
+.logo:hover .logo-aws {
+  animation: logoGlitch 0.3s ease 0.1s;
+}
+
+@keyframes logoGlitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(2px, 2px);
+  }
+}
+
+/* Status Indicator Pulse */
+.status-indicator:hover .status-dot {
+  animation: statusPulseIntense 0.5s ease infinite;
+}
+
+@keyframes statusPulseIntense {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow: 0 0 20px currentColor;
+  }
+}
+
+/* Heatmap Cell Hover */
+.heatmap-cell {
+  transition: all 0.2s ease;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.2);
+  z-index: 10;
+  box-shadow: 0 0 20px currentColor;
+}
+
+/* Correlation Stats Hover */
+.correlation-stats:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.2),
+    inset 0 0 20px rgba(0, 245, 255, 0.05);
+}
+
+/* Power Meter Animation */
+.power-meter-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.power-meter-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: powerShine 2s ease-in-out infinite;
+}
+
+@keyframes powerShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}

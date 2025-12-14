@@ -1,0 +1,711 @@
+/* Anime Effects CSS - Scroll animations, transitions, and special effects */
+
+/* ===== Scroll-Triggered Animations ===== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== Anime Speed Lines Effect ===== */
+.speed-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.speed-lines.active {
+  opacity: 1;
+}
+
+.speed-line {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--neon-cyan),
+    transparent
+  );
+  height: 2px;
+  animation: speedLine 0.5s ease-out forwards;
+}
+
+@keyframes speedLine {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+/* ===== Anime Glow Pulse on Scroll ===== */
+.glow-on-scroll {
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+.glow-on-scroll.in-view {
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 245, 255, 0.2),
+    0 0 60px rgba(0, 245, 255, 0.1);
+  animation: glowPulseScroll 2s ease-in-out infinite;
+}
+
+@keyframes glowPulseScroll {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 245, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.5), 0 0 60px rgba(0, 245, 255, 0.3),
+      0 0 80px rgba(0, 245, 255, 0.2);
+  }
+}
+
+/* ===== Anime Character Silhouette Parallax ===== */
+.parallax-layer {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
+}
+
+.anime-character-1 {
+  bottom: -50px;
+  right: 5%;
+  width: 300px;
+  height: 500px;
+  background: linear-gradient(to top, rgba(0, 245, 255, 0.1), transparent);
+  clip-path: polygon(
+    50% 0%,
+    65% 15%,
+    70% 40%,
+    80% 60%,
+    75% 100%,
+    25% 100%,
+    20% 60%,
+    30% 40%,
+    35% 15%
+  );
+  opacity: 0.5;
+}
+
+.anime-character-2 {
+  bottom: -30px;
+  left: 3%;
+  width: 250px;
+  height: 400px;
+  background: linear-gradient(to top, rgba(255, 0, 255, 0.1), transparent);
+  clip-path: polygon(
+    40% 0%,
+    60% 0%,
+    70% 20%,
+    65% 50%,
+    80% 100%,
+    20% 100%,
+    35% 50%,
+    30% 20%
+  );
+  opacity: 0.4;
+}
+
+/* ===== Floating Sakura Petals ===== */
+.sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9996;
+  overflow: hidden;
+}
+
+.sakura-petal {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 182, 193, 0.8) 0%,
+    rgba(255, 105, 180, 0.4) 50%,
+    transparent 70%
+  );
+  border-radius: 50% 0 50% 50%;
+  animation: sakuraFall linear infinite;
+  opacity: 0;
+}
+
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* ===== Energy Burst Effect ===== */
+.energy-burst {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 245, 255, 0.8) 0%,
+    rgba(255, 0, 255, 0.4) 30%,
+    transparent 70%
+  );
+  transform: scale(0);
+  opacity: 0;
+}
+
+.energy-burst.active {
+  animation: energyBurst 0.8s ease-out forwards;
+}
+
+@keyframes energyBurst {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* ===== Anime Text Reveal ===== */
+.anime-text-reveal {
+  overflow: hidden;
+}
+
+.anime-text-reveal span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+}
+
+.anime-text-reveal.revealed span {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Staggered text animation */
+.anime-text-reveal.revealed span:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.anime-text-reveal.revealed span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.anime-text-reveal.revealed span:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.anime-text-reveal.revealed span:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.anime-text-reveal.revealed span:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+/* ===== Glitch Effect ===== */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.glitch-text:hover::before {
+  animation: glitch1 0.3s infinite;
+  color: var(--neon-cyan);
+  opacity: 0.8;
+}
+
+.glitch-text:hover::after {
+  animation: glitch2 0.3s infinite;
+  color: var(--neon-magenta);
+  opacity: 0.8;
+}
+
+@keyframes glitch1 {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+}
+
+@keyframes glitch2 {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(3px, -3px);
+  }
+  40% {
+    transform: translate(3px, 3px);
+  }
+  60% {
+    transform: translate(-3px, -3px);
+  }
+  80% {
+    transform: translate(-3px, 3px);
+  }
+}
+
+/* ===== Neon Border Animation ===== */
+.neon-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--neon-cyan),
+    var(--neon-magenta),
+    var(--aws-orange),
+    var(--neon-cyan)
+  );
+  background-size: 400% 400%;
+  z-index: -1;
+  border-radius: inherit;
+  animation: neonBorderFlow 3s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.neon-border:hover::before,
+.neon-border.in-view::before {
+  opacity: 1;
+}
+
+@keyframes neonBorderFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ===== Card Tilt Effect ===== */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+}
+
+.tilt-card .card-content {
+  transform: translateZ(30px);
+}
+
+/* ===== Anime Spark Effect ===== */
+.spark-container {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+  animation: sparkle 1s ease-out forwards;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translate(var(--spark-x, 50px), var(--spark-y, -50px));
+    opacity: 0;
+  }
+}
+
+/* ===== Scroll Progress Indicator ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--neon-cyan),
+    var(--neon-magenta),
+    var(--aws-orange)
+  );
+  z-index: 10000;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-magenta);
+}
+
+/* ===== Anime Power Level Meter ===== */
+.power-meter {
+  position: relative;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.power-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  border-radius: 4px;
+  width: 0%;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.power-meter.in-view .power-meter-fill {
+  animation: powerCharge 2s ease-out forwards;
+}
+
+@keyframes powerCharge {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: var(--power-level, 75%);
+  }
+}
+
+/* ===== Floating Elements ===== */
+.float-animation {
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.float-animation:nth-child(2n) {
+  animation-delay: -2s;
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ===== Rotating Halo Effect ===== */
+.halo-effect {
+  position: relative;
+}
+
+.halo-effect::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  border: 2px solid transparent;
+  border-top-color: var(--neon-cyan);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: haloRotate 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.halo-effect:hover::after,
+.halo-effect.in-view::after {
+  opacity: 0.5;
+}
+
+@keyframes haloRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ===== Matrix Rain Effect ===== */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+}
+
+.matrix-column {
+  position: absolute;
+  top: -100%;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+  animation: matrixFall linear infinite;
+  writing-mode: vertical-rl;
+}
+
+@keyframes matrixFall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200vh);
+  }
+}
+
+/* ===== Hover Ripple Effect ===== */
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 245, 255, 0.4);
+  transform: scale(0);
+  animation: rippleExpand 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleExpand {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ===== Section Divider Animation ===== */
+.section-divider {
+  position: relative;
+  height: 2px;
+  background: transparent;
+  margin: var(--spacing-xl) 0;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--neon-cyan),
+    var(--neon-magenta),
+    transparent
+  );
+  animation: dividerSlide 3s ease-in-out infinite;
+}
+
+@keyframes dividerSlide {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===== Anime Eye Glow ===== */
+.eye-glow {
+  position: relative;
+}
+
+.eye-glow::before,
+.eye-glow::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.eye-glow:hover::before,
+.eye-glow:hover::after {
+  opacity: 1;
+  animation: eyeBlink 2s ease-in-out infinite;
+}
+
+.eye-glow::before {
+  top: 30%;
+  left: 35%;
+}
+.eye-glow::after {
+  top: 30%;
+  right: 35%;
+}
+
+@keyframes eyeBlink {
+  0%,
+  45%,
+  55%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+/* ===== Smooth Scroll Behavior ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Custom Scrollbar with Anime Theme ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-left: 1px solid var(--glass-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-magenta));
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-magenta), var(--neon-cyan));
+  box-shadow: 0 0 20px var(--neon-magenta);
+}
+
+/* ===== Cursor Trail Effect ===== */
+.cursor-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, opacity 0.3s ease;
+}
+
+.cursor-trail.clicking {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime AWS Dashboard - Property Tests</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #1a1a2e;
+        color: #eee;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        color: #00f5ff;
+      }
+      .test-suite {
+        margin: 20px 0;
+        padding: 15px;
+        background: #16213e;
+        border-radius: 8px;
+      }
+      .test-suite h2 {
+        color: #ff9900;
+        margin-top: 0;
+      }
+      .test-result {
+        padding: 8px 12px;
+        margin: 5px 0;
+        border-radius: 4px;
+      }
+      .test-result.pass {
+        background: rgba(0, 255, 100, 0.2);
+        border-left: 3px solid #00ff64;
+      }
+      .test-result.fail {
+        background: rgba(255, 0, 100, 0.2);
+        border-left: 3px solid #ff0064;
+      }
+      .summary {
+        margin-top: 20px;
+        padding: 15px;
+        background: #0f3460;
+        border-radius: 8px;
+      }
+      .summary.all-pass {
+        border: 2px solid #00ff64;
+      }
+      .summary.has-fail {
+        border: 2px solid #ff0064;
+      }
+    </style>
+    <!-- fast-check for property-based testing -->
+    <script src="https://cdn.jsdelivr.net/npm/fast-check@3.14.0/lib/bundle.js"></script>
+  </head>
+  <body>
+    <h1>🎌 Anime AWS Dashboard - Property Tests</h1>
+    <div id="test-output"></div>
+    <div id="summary" class="summary"></div>
+
+    <!-- Source modules -->
+    <script src="../js/sampleData.js"></script>
+    <script src="../js/kpi.js"></script>
+    <script src="../js/filtering.js"></script>
+    <script src="../js/correlation.js"></script>
+    <script src="../js/dataService.js"></script>
+    <script src="../js/uiController.js"></script>
+
+    <!-- Test files -->
+    <script src="dataAlignment.property.test.js"></script>
+    <script src="kpi.property.test.js"></script>
+    <script src="filtering.property.test.js"></script>
+    <script src="correlation.property.test.js"></script>
+    <script src="formatting.property.test.js"></script>
+    <script src="runTests.js"></script>
+  </body>
+</html>
