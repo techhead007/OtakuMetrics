@@ -4,7 +4,7 @@
 
 ![OtakuMetrics Banner](https://img.shields.io/badge/OtakuMetrics-Anime%20×%20Finance-ff00ff?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJMMiAyMmgyMEwxMiAyeiIvPjwvc3ZnPg==)
 
-[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Visit%20Site-00f5ff?style=for-the-badge)](https://yourusername.github.io/otakumetrics)
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Visit%20Site-00f5ff?style=for-the-badge)](https://yourtechhead007.github.io/OtakuMetrics)
 [![Built with Kiro](https://img.shields.io/badge/Built%20with-Kiro%20AI-ff9900?style=for-the-badge)](https://kiro.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
@@ -65,7 +65,7 @@ OtakuMetrics is a professional-grade analytics dashboard that visualizes the sur
 
 ## 🚀 Live Demo
 
-**[👉 View Live Dashboard](https://yourusername.github.io/otakumetrics)**
+**[👉 View Live Dashboard](https://yourtechhead007.github.io/OtakuMetrics)**
 
 ![Dashboard Screenshot](screenshots/dashboard-preview.png)
 
@@ -77,10 +77,10 @@ OtakuMetrics is a professional-grade analytics dashboard that visualizes the sur
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/otakumetrics.git
+git clone https://github.com/yourtechhead007/OtakuMetrics.git
 
 # Navigate to project folder
-cd otakumetrics
+cd OtakuMetrics
 
 # Open in browser (no build step required!)
 open index.html
@@ -112,7 +112,7 @@ npx serve .
 ## 📁 Project Structure
 
 ```
-otakumetrics/
+OtakuMetrics/
 ├── 📄 index.html              # Main HTML file
 ├── 📁 css/
 │   ├── main.css               # Variables & base styles
@@ -163,7 +163,7 @@ git add .
 git commit -m "Initial commit: OtakuMetrics Dashboard"
 
 # Create repo on GitHub, then add remote
-git remote add origin https://github.com/yourusername/otakumetrics.git
+git remote add origin https://github.com/yourtechhead007/OtakuMetrics.git
 
 # Push to main branch
 git branch -M main
@@ -185,7 +185,7 @@ git push -u origin main
 After 1-2 minutes, your site will be live at:
 
 ```
-https://yourusername.github.io/otakumetrics
+https://yourtechhead007.github.io/OtakuMetrics
 ```
 
 ### 🔄 Updating Your Site
