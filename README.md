@@ -316,14 +316,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📬 Contact
-
-**[Your Name]**
-
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
 ---
 
 <div align="center">
