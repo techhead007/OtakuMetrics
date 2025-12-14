@@ -1,4 +1,5 @@
 # 🎌 OtakuMetrics — Anime × Stock Analytics Dashboard
+![Gemini_Generated_Image_9lzpjr9lzpjr9lzp](https://github.com/user-attachments/assets/4120c22d-d014-407b-ab6c-38c3ee42c421)
 
 <div align="center">
 
