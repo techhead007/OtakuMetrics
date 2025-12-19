@@ -1,8 +1,12 @@
-# I Built a Dashboard That Finds Hidden Patterns Between Anime Trends and Amazon Stock — Here's How Kiro Made It Possible in One Weekend
+# I Built OtakuMetrics — A Dashboard That Finds Hidden Patterns Between Anime Trends and Amazon Stock — Here's How Kiro Made It Possible in One Weekend
 
 **Author:** [Your Name]  
 **Published on:** AWS Builder Center  
 **Tags:** Kiro, AI-Assisted Development, Data Visualization, JavaScript, Chart.js
+
+---
+
+> 🚀 **[Live Demo](https://techhead007.github.io/OtakuMetrics)** | 📂 **[GitHub Repository](https://github.com/techhead007/OtakuMetrics)**
 
 ---
 
@@ -397,7 +401,7 @@ Because what's an anime dashboard without some flair?
 Here's how all the pieces fit together:
 
 ```
-Project Structure
+OtakuMetrics Project Structure
 ├── index.html              # Single-page application
 ├── css/
 │   ├── main.css            # Variables, base styles, dark theme
@@ -641,6 +645,8 @@ You might be surprised how quickly "someday" becomes "today."
 
 ## Resources
 
+- **OtakuMetrics Live Demo:** [techhead007.github.io/OtakuMetrics](https://techhead007.github.io/OtakuMetrics)
+- **GitHub Repository:** [github.com/techhead007/OtakuMetrics](https://github.com/techhead007/OtakuMetrics)
 - **Kiro:** [kiro.dev](https://kiro.dev)
 - **Chart.js:** [chartjs.org](https://www.chartjs.org/)
 - **Jikan API:** [jikan.moe](https://jikan.moe/)
@@ -655,7 +661,7 @@ That Friday night hypothesis? Turns out there _is_ a moderate positive correlati
 
 But the real discovery wasn't about anime and stocks. It was about how AI tools like Kiro are changing what's possible for solo developers.
 
-I built a professional-grade analytics dashboard in a weekend. Not because I'm a 10x developer. Because I had the right tool.
+I built OtakuMetrics — a professional-grade analytics dashboard — in a weekend. Not because I'm a 10x developer. Because I had the right tool.
 
 **The future of development isn't AI replacing developers. It's AI making developers unstoppable.**
 
@@ -663,6 +669,16 @@ Now if you'll excuse me, I have another midnight idea to explore. 🚀
 
 ---
 
-_Questions? Want to see the live demo? Find me on [Twitter/X] or [LinkedIn]. And if you build something cool with Kiro, tag me — I'd love to see it!_
+---
 
-**#AWS #Kiro #BuildInPublic #DataVisualization #AnimeData #TechStock #AIAssistedDevelopment**
+## 🔗 Try OtakuMetrics Now
+
+> 🚀 **[Live Demo](https://techhead007.github.io/OtakuMetrics)** — See the dashboard in action
+>
+> 📂 **[GitHub Repository](https://github.com/techhead007/OtakuMetrics)** — Clone, fork, and explore the code
+
+---
+
+_Questions? Want to discuss the project? Find me on [Twitter/X] or [LinkedIn]. And if you build something cool with Kiro, tag me — I'd love to see it!_
+
+**#AWS #Kiro #BuildInPublic #DataVisualization #AnimeData #TechStock #AIAssistedDevelopment #OtakuMetrics**

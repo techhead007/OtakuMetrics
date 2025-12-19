@@ -1,5 +1,4 @@
 # 🎌 OtakuMetrics — Anime × Stock Analytics Dashboard
-![Gemini_Generated_Image_9lzpjr9lzpjr9lzp](https://github.com/user-attachments/assets/4120c22d-d014-407b-ab6c-38c3ee42c421)
 
 <div align="center">
 
@@ -81,7 +80,7 @@ OtakuMetrics is a professional-grade analytics dashboard that visualizes the sur
 git clone https://github.com/techhead007/OtakuMetrics.git
 
 # Navigate to project folder
-cd OtakuMetrics
+cd otakumetrics
 
 # Open in browser (no build step required!)
 open index.html
@@ -113,7 +112,7 @@ npx serve .
 ## 📁 Project Structure
 
 ```
-OtakuMetrics/
+otakumetrics/
 ├── 📄 index.html              # Main HTML file
 ├── 📁 css/
 │   ├── main.css               # Variables & base styles
@@ -316,6 +315,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **[fast-check](https://github.com/dubzzz/fast-check)** — Property-based testing
 
 ---
+
+## 📬 Contact
+
+**[Your Name]**
+
+- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+- Email: your.email@example.com
 
 ---
 
